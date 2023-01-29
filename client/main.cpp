@@ -73,8 +73,6 @@ static DialServer* getServerFromUser( vector<DialServer*> list )
     DialServer* pServer;
     // show a list to the user
     char buf[80] = {0,};
-    vector<DialServer*>::iterator it;
-
     printf("Found Multiple servers\n");
     printf("0: Rescan and list DIAL servers\n");
     printServerList(list);
@@ -84,7 +82,7 @@ static DialServer* getServerFromUser( vector<DialServer*> list )
     if( server > 0 && server <= list.size()){
         pServer = list[server-1];
     }else{
-        pServer = NULL;
+        pServer = nullptr;
     }
     return pServer;
 }

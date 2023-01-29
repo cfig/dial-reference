@@ -314,7 +314,8 @@ void *DialDiscovery::send_mcast()
     int one = 1, my_sock;
     socklen_t addrlen;
     //struct ip_mreq mreq;
-    char send_buf[strlen((char*)ssdp_msearch) + INET_ADDRSTRLEN + 256] = {0,};
+    char send_buf[strlen((char*)ssdp_msearch) + INET_ADDRSTRLEN + 256];
+    memset(send_buf, 0, sizeof(send_buf));
     int send_size;
     search_conn connection;
 
